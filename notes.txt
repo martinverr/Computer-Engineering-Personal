@@ -21,3 +21,18 @@ git rm <file>
 	#remove <file> (until new commit, <file> can be ripristinated
 
 #status of file: untracked->unmodified->modified->staged
+
+#__________________2nd LESSON________________________
+
+#note: In 2nd lesson, most part of commands are shown with TortoiseGit, gui for git
+git brnch <branch_name>
+	#create a branch of name <branch_name> in local
+git checkout <branch_name>
+	#move in branch <branch_name> in local
+git push <remote_branch_name> <local_branch_name>
+	#push branch <local_branch_name> in remote with name <remote_branch_name>
+git checkout <remote_branch_name>
+	#pull branch
+git merge <branch_name> 
+	#merge the current branch with <branch_name> specified
+#merge conflicts and .gitignore explained with TortoiseGit
