@@ -1,0 +1,23 @@
+git config --global user.name "<username>"
+	#set the username
+git config --global user.email <email>
+	#set the email
+
+git clone <repository>
+	#clone from repository, creating a project with the same name of that
+git init
+	#create a new project from zero
+git status
+	#Check status for tracked and untracked files, staged and unstaged
+git add <file>
+	#track and stage the <file>
+git commit -m "<desc>"
+	#local commit of tracked(and staged) repository with description name <desc>
+git push
+	#load local commit to remote
+git pull
+	#modified files in remote commit update the local commit
+git rm <file>
+	#remove <file> (until new commit, <file> can be ripristinated
+
+#status of file: untracked->unmodified->modified->staged
