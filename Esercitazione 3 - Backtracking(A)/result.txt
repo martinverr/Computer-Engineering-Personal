@@ -1,0 +1,12 @@
+es1:	00:22	works
+
+es2:	00:25	doesn't work
+	00:30	works
+Notes: 	The solution was correct, but different from the chosen one by
+	internet compiler in case 2 solutions have the same number of
+	boxes. I edited it to have the same result(">" -> ">=" so that
+	the "newer" solution is taken
+
+TOTAL
+time: 52 mins
+2/2 work
