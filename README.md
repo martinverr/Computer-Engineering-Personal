@@ -1,2 +1,2 @@
 # FDI_II
-Faculty lesson about Git 
+Faculty lessons and exercises
