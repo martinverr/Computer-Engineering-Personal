@@ -1,0 +1,16 @@
+es1:	00:45	not working
+	Notes:	Changed the algorithm order, from i:0 -> n to i:n -> 0.
+	
+	01:20	works
+	Notes:	Struggling finding a memory access error in function geth(),
+	that i thought it occurred during backtraking, but the wrong call
+	was in the printsol(), becaused passed "currsol" instead of "bestsol"
+
+es2:	
+
+TOTAL
+Done in 00:45
+0/1 work first try
+
+Done in 01:20
+1/1 work after debug
