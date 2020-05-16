@@ -24,17 +24,3 @@ Item* LoadList(const char * filename) {
 	fclose(file);
 	return list;
 }
-
-int main(void) {
-	Item * res1 = LoadList("data_00.txt");
-	WriteStdoutList(res1);
-	Item * res2 = LoadList("data_01.txt");
-	WriteStdoutList(res2);
-
-	Item * res12diff = Diff(res1, res2);
-	WriteStdoutList(res12diff);
-
-	DeleteList(res2);
-	DeleteList(res1);
-	return 0;
-}
