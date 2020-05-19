@@ -1,3 +1,6 @@
 es1: 	works (tested online)
 es2:	works (tested online)
 es3:	works (tested online)
+es4:  compiled (can't test online)
+es5:  compiled (can't test online)
+es6:  works (tested online)
