@@ -81,6 +81,39 @@ void quicksort(int * v, int min, int max) {
 
 }
 
+void merge(int v[], int first, int mid, int last) {
+	int vout[last - first + 1];
+	int i = first, j = mid, k = first;
+	while (i < mid && j <= last) {
+		if (v[i] < v[j])
+			vout[k] = v[i++];
+		else
+			vout[k] = v[j++];
+		k++;
+	}
+	while (i < i2) {
+		vout[k] = v[i++];
+		k++;
+	}
+	while (j <= last) {
+		vout[k] = v[j++];
+		k++;
+	}
+	for (i = i1; i <= last; i++)
+		v[i] = vout[i];
+}
+
+void mergeSort(int v[], int first, int last) {
+	int mid;
+	if (first < last) {
+		mid = (first + last) / 2;
+		mergeSort(v, first, mid);
+		mergeSort(v, mid + 1, last);
+		merge(v, first, mid + 1, last);
+	}
+}
+}
+
 /*
 int main(void) {
 	int * v1 = genRandVec(6);
