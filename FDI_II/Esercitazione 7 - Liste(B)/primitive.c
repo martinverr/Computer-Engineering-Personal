@@ -10,6 +10,7 @@
 
 int ElemCompare(const ElemType *e1, const ElemType *e2)
 {
+
 	return strcmp(e1->name, e2->name);
 }
 /*
