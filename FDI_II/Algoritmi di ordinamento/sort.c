@@ -25,8 +25,8 @@ void bubblesort(int * v, int size) {
 	for (int i = 0; i < size && swapped; i++) {
 		swapped = 0;
 		for (int j = i; j < size - 1 - i; j++)
-			if (v[j] > v[j+1]) {
-				swap(&v[j], &v[j+1]);
+			if (v[j] > v[j + 1]) {
+				swap(&v[j], &v[j + 1]);
 				swapped = 1;
 			}
 	}
