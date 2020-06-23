@@ -24,7 +24,7 @@ void bubblesort(int * v, int size) {
 
 	for (int i = 0; i < size && swapped; i++) {
 		swapped = 0;
-		for (int j = i; j < size - 1 - i; j++)
+		for (int j = 0; j < size - 1 - i; j++)
 			if (v[j] > v[j + 1]) {
 				swap(&v[j], &v[j + 1]);
 				swapped = 1;
@@ -81,37 +81,33 @@ void quicksort(int * v, int min, int max) {
 
 }
 
-void merge(int v[], int first, int mid, int last) {
-	int vout[last - first + 1];
-	int i = first, j = mid, k = first;
-	while (i < mid && j <= last) {
+void merge(int *v, int len) {
+	int * tmp_v = malloc(len * sizeof(int));
+	int i = 0, j = len / 2, tmp_v_index = 0;
+
+	while (i < len / 2 && j < len) {
 		if (v[i] < v[j])
-			vout[k] = v[i++];
+			tmp_v[tmp_v_index++] = v[i++];
 		else
-			vout[k] = v[j++];
-		k++;
+			tmp_v[tmp_v_index++] = v[j++];
 	}
-	while (i < i2) {
-		vout[k] = v[i++];
-		k++;
-	}
-	while (j <= last) {
-		vout[k] = v[j++];
-		k++;
-	}
-	for (i = i1; i <= last; i++)
-		v[i] = vout[i];
+	for (; i < len / 2; i++)
+		tmp_v[tmp_v_index++] = v[i];
+	for (; j < len; j++)
+		tmp_v[tmp_v_index++] = v[j];
+
+	// copio tmp_v su v (originale) e libero tmp_v (vettore d'appoggio)
+	for (int k = 0; k < len; k++)
+		v[k] = tmp_v[k];
+	free(tmp_v);
 }
 
-void mergeSort(int v[], int first, int last) {
-	int mid;
-	if (first < last) {
-		mid = (first + last) / 2;
-		mergeSort(v, first, mid);
-		mergeSort(v, mid + 1, last);
-		merge(v, first, mid + 1, last);
-	}
-}
+void mergesort(int * v, int len) {
+	if (len <= 1)
+		return;
+	mergesort(v, len / 2);
+	mergesort(v + len / 2, len - len / 2);
+	merge(v, len);
 }
 
 /*
