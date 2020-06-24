@@ -12,27 +12,11 @@ void printsol(int * currSol, int n) {
 	printf("), ");
 }
 
-bool verifica1(int n, int * currSol) {
+bool verifica(int n, int * currSol) {
 	bool passed = true;
-	for (int i = 2; i < n; i++) {
-		if (//not condizione 1
-			!(
-				currSol[i - 1] > currSol[i] &&
-				currSol[i - 1] > currSol[i - 2])
-			)
-			passed = false;
-	}
-	return passed;
-}
-
-bool verifica2(int n, int * currSol) {
-	bool passed = true;
-	for (int i = 2; i < n; i++) {
-		if (//not condizione 2
-			!(
-				currSol[i - 1] < currSol[i] &&
-				currSol[i - 1] < currSol[i - 2])
-			)
+	for (int i = 0; i < n-2; i++) {
+		if (! ( (currSol[i]<currSol[i + 1] && currSol[i + 1]>currSol[i + 2]) ||
+			(currSol[i] > currSol[i + 1] && currSol[i + 1] < currSol[i + 2]) ) )
 			passed = false;
 	}
 	return passed;
@@ -40,7 +24,7 @@ bool verifica2(int n, int * currSol) {
 
 void backtracking(size_t n, int * currSol, int step) {
 	if (step == n) {
-		if (verifica1(n, currSol) || verifica2(n, currSol))
+		if (verifica(n, currSol))
 			printsol(currSol, n);
 		return;
 	}
@@ -59,9 +43,8 @@ void GolaCresta(size_t n) {
 	free(sol);
 }
 
-/*
+
 int main(void) {
-	GolaCresta(3);
+	GolaCresta(4);
 	return 0;
 }
-*/
